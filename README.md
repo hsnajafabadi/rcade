@@ -24,4 +24,4 @@ This should create a “./out/MyTestJob” folder, with the RCADE output files d
 ## Usage
 Use the RCOpt.sh script to run RCADE on your dataset:
 
-bash RCOpt.sh <job_name> <C2H2_fasta> <ChIP_fasta>
+bash RCOpt.sh jobName fastaC2H2 fastaChIP
