@@ -26,7 +26,7 @@ Use the RCOpt.sh script to run RCADE on your dataset:
 
 > bash RCOpt.sh jobName fastaC2H2 fastaChIP
 
-The _jobName_ is a unique identifier for your job. The output files of RCADE will be placed in "./out/_jobName_". These files will include:
+The argument _jobName_ is a unique identifier for your job. The output files of RCADE will be placed in "./out/_jobName_". These files will include:
 
 - **results.ps**: A postscript file that visualizes a summary of the optimization results. RCADE identifies several motifs from the ChIP-seq data, which are sorted in this file based on their AUROC values for distinguishing ChIP-seq peaks from dinucleotide-shuffled sequences. For each motif, the corresponding zinc fingers are shown on the top (for example, CTCF:3-7 means that zinc fingers 3-7 of the CTCF protein are used for predicting the initial seed motif that is then optimized). The seed motif that is directly predicted from protein sequence is then shown, followed by the motif that is optimized based on ChIP-seq data. The AUROC value for each motif, the associated p-value, as well as the Pearson similarity of the seed and optimized motifs are also shown.
 - **results.opt.ps**: Same as the above output, except that it only includes the top-scoring optimized motif.
