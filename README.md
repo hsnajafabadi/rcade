@@ -32,6 +32,6 @@ The argument _jobName_ is a unique identifier for your job. The output files of 
 - **results.opt.ps**: Same as the above output, except that it only includes the top-scoring optimized motif.
 - **results.opt.PFM.txt**: A text file containing the PFM of the top-scoring optimized motif, in a format similar to what is used in the CisBP database (http://cisbp.ccbr.utoronto.ca/).
 - **results.opt.PFM.meme.txt**: A text file containing the PFM of the top-scoring optimized motif, in a format suitable for the MEME suite (http://meme.nbcr.net/meme/).
-- results.PFM.txt: A text file containing all seed motifs and their optimized versions (the optimized motif names end with the phrase “opt”). The motifs are in CisBP format.
+- **results.PFM.txt**: A text file containing all seed motifs and their optimized versions (the optimized motif names end with the phrase “opt”). The motifs are in CisBP format.
 - **results.report.txt**: A report table, summarizing the optimization results for the motifs.
 - **log.info.txt**: A short summary of warning/error/info messages.
