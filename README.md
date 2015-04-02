@@ -19,9 +19,19 @@ To test the pipeline, execute this command:
 
 > bash RCOpt.sh MyTestJob examples/CTCF/CTCF.fasta examples/CTCF/GSM1407629.500bp.fasta
 
-This should create a “./out/MyTestJob” folder, with the RCADE output files described above.
+This should create a “./out/MyTestJob” folder, with the RCADE output files described below.
  
 ## Usage
 Use the RCOpt.sh script to run RCADE on your dataset:
 
 > bash RCOpt.sh jobName fastaC2H2 fastaChIP
+
+The _jobName_ is a unique identifier for your job. The output files of RCADE will be placed in "./out/_jobName_". These files will include:
+
+- *results.ps*: A postscript file that visualizes a summary of the optimization results. RCADE identifies several motifs from the ChIP-seq data, which are sorted in this file based on their AUROC values for distinguishing ChIP-seq peaks from dinucleotide-shuffled sequences. For each motif, the corresponding zinc fingers are shown on the top (for example, CTCF:3-7 means that zinc fingers 3-7 of the CTCF protein are used for predicting the initial seed motif that is then optimized). The seed motif that is directly predicted from protein sequence is then shown, followed by the motif that is optimized based on ChIP-seq data. The AUROC value for each motif, the associated p-value, as well as the Pearson similarity of the seed and optimized motifs are also shown.
+- *results.opt.ps*: Same as the above output, except that it only includes the top-scoring optimized motif.
+- *results.opt.PFM.txt*: A text file containing the PFM of the top-scoring optimized motif, in a format similar to what is used in the CisBP database (http://cisbp.ccbr.utoronto.ca/).
+- *results.opt.PFM.meme.txt*: A text file containing the PFM of the top-scoring optimized motif, in a format suitable for the MEME suite (http://meme.nbcr.net/meme/).
+- results.PFM.txt: A text file containing all seed motifs and their optimized versions (the optimized motif names end with the phrase “opt”). The motifs are in CisBP format.
+- *results.report.txt*: A report table, summarizing the optimization results for the motifs.
+- *log.info.txt*: A short summary of warning/error/info messages.
